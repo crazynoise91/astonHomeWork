@@ -57,7 +57,7 @@ public class Main {
 
     // 3. Метод для печати цвета в зависимости от значения
     public static void printColorBasedOnValue() {
-        int value = -12;
+        int value = -50;
         if (value <= 0) {
             System.out.println("Красный");
         } else if (value <= 100) {
