@@ -138,7 +138,7 @@ public class Main {
 
     // 13. Метод для печати диагональной матрицы
     public static void printDiagonalMatrix() {
-        int[][] arr = new int[3][3];
+        int[][] arr = new int[5][5];
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0, x = arr[i].length - 1; j < arr[i].length; j++, x--) {
                 if (i == j || i == x) arr[i][j] = 1;
