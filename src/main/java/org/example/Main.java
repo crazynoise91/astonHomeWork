@@ -35,7 +35,7 @@ public class Main {
         printDiagonalMatrix();
 
         System.out.println();
-        initializeArrayWithValue(3, 4);
+        initializeArrayWithValue(3, 777);
     }
 
     // 1. Метод для печати трех слов
