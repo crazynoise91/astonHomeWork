@@ -1,4 +1,4 @@
-package org.example;
+package Lesson_4;
 
 public class Main {
 
@@ -34,9 +34,15 @@ public class Main {
         System.out.println();
         printDiagonalMatrix();
 
+        int len = 3;
+        int initialValue = 7;
+        int[] array = createArray(len, initialValue);
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
         System.out.println();
-        initializeArrayWithValue(3, 777);
     }
+
 
     // 1. Метод для печати трех слов
     public static void printThreeWords() {
@@ -138,7 +144,7 @@ public class Main {
 
     // 13. Метод для печати диагональной матрицы
     public static void printDiagonalMatrix() {
-        int[][] arr = new int[3][3];
+        int[][] arr = new int[5][5];
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0, x = arr[i].length - 1; j < arr[i].length; j++, x--) {
                 if (i == j || i == x) arr[i][j] = 1;
@@ -150,11 +156,11 @@ public class Main {
     }
 
     // 14. Метод для инициализации массива с заданным значением
-    public static void initializeArrayWithValue(int len, int initialValue) {
-        int[] arr = new int[len];
+    public static int[] createArray(int len, int initialValue) {
+        int[] arrayTwo = new int[len];
         for (int i = 0; i < len; i++) {
-            arr[i] = initialValue;
-            System.out.print("[" + i + "]" + arr[i] + " ");
+            arrayTwo[i] = initialValue;
         }
+        return arrayTwo;
     }
 }
