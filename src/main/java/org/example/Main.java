@@ -45,8 +45,8 @@ public class Main {
 
     // 2. Метод для проверки знака суммы двух чисел
     public static void checkSumSign() {
-        int x = 5;
-        int y = 6;
+        int x = -9;
+        int y = 7;
         int sum = x + y;
         if (sum >= 0) {
             System.out.println("Сумма положительная");
