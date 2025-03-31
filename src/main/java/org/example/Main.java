@@ -1,120 +1,160 @@
 package org.example;
 
-import java.util.Arrays;
-
 public class Main {
+
     public static void main(String[] args) {
         printThreeWords();
-        System.out.println(checkSumSign(10, -5));
-        System.out.println(printColor(50));
-        System.out.println(compareNumbers(15, 10));
-        System.out.println(checkSumInRange(5, 15));
-        System.out.println(checkPosAndNegNum(5));
-        System.out.println(isNegative(-3));
-        stringNum("Hello, Aston!", 3);
-        System.out.println(leapYear(2024));
-        System.out.println(Arrays.toString(invertArray(new int[]{1, 1, 0, 0, 1, 0, 1, 1, 0, 0})));
-        System.out.println(Arrays.toString(fillArray(100)));
-        System.out.println(Arrays.toString(multiplyArrayElements(new int[]{1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1})));
-        diagonalArray(3);
-        System.out.println(Arrays.toString(createArray(5, 777)));
+        checkSumSign();
+        printColorBasedOnValue();
+        compareTwoNumbers();
+
+        System.out.println(isSumInRange(10, -2));
+        System.out.println(isSumInRange(16, 4));
+
+        checkIfPositiveOrNegative(-33);
+
+        System.out.println(isNegative(7));
+        System.out.println(isNegative(-1));
+
+        printStringMultipleTimes("Hello, Aston!", 2);
+
+        System.out.println(isLeapYear(2024));
+
+        int[] arr = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+        System.out.println();
+        invertArrayValues(arr);
+
+        System.out.println();
+        fillArrayWithSequentialNumbers(100);
+
+        int[] arr2 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        System.out.println();
+        doubleValuesLessThanSix(arr2);
+
+        System.out.println();
+        printDiagonalMatrix();
+
+        System.out.println();
+        initializeArrayWithValue(3, 4);
     }
 
-    // 1. Вывод трех слов
-    static void printThreeWords() {
-        System.out.println("Apple\nBanana\nOrange");
+    // 1. Метод для печати трех слов
+    public static void printThreeWords() {
+        System.out.println("Orange,\nBanana,\nApple.");
     }
 
-    // 2. Проверка суммы
-    static String checkSumSign(int a, int b) {
-        return (a + b) >= 0 ? "Сумма положительная" : "Сумма отрицательная";
-    }
-
-    // 3. Вывод цвета
-    static String printColor(int value) {
-        if (value <= 0) {
-            return "Красный";
-        } else if (value <= 100) {
-            return "Желтый";
+    // 2. Метод для проверки знака суммы двух чисел
+    public static void checkSumSign() {
+        int x = 5;
+        int y = 6;
+        int sum = x + y;
+        if (sum >= 0) {
+            System.out.println("Сумма положительная");
         } else {
-            return "Зеленый";
+            System.out.println("Сумма отрицательная");
         }
     }
 
-    // 4. Сравнение чисел
-    static String compareNumbers(int a, int b) {
-        return a >= b ? "a >= b" : "a < b";
+    // 3. Метод для печати цвета в зависимости от значения
+    public static void printColorBasedOnValue() {
+        int value = -12;
+        if (value <= 0) {
+            System.out.println("Красный");
+        } else if (value <= 100) {
+            System.out.println("Желтый");
+        } else {
+            System.out.println("Зеленый");
+        }
     }
 
-    // 5. Проверка суммы в диапазоне
-    static boolean checkSumInRange(int a, int b) {
-        return (a + b) >= 10 && (a + b) <= 20;
+    // 4. Метод для сравнения двух чисел
+    public static void compareTwoNumbers() {
+        int a = 10;
+        int b = 20;
+        if (a >= b) {
+            System.out.println("a >= b");
+        } else {
+            System.out.println("a < b");
+        }
     }
 
-    // 6. Проверка знака числа
-    static String checkPosAndNegNum(int num) {
-        return num >= 0 ? "Положительное" : "Отрицательное";
+    // 5. Метод для проверки, находится ли сумма в диапазоне от 10 до 20
+    static boolean isSumInRange(int a, int b) {
+        return a + b >= 10 && a + b <= 20;
     }
 
-    // 7. Проверка на отрицательное число
-    static boolean isNegative(int num) {
-        return num < 0;
+    // 6. Метод для проверки, положительное ли число
+    public static void checkIfPositiveOrNegative(int number) {
+        if (number >= 0) {
+            System.out.println("Число положительное");
+        } else {
+            System.out.println("Число отрицательное");
+        }
     }
 
-    // 8. Повтор строки
-    static void stringNum(String str, int count) {
+    // 7. Метод для проверки, является ли число отрицательным
+    public static boolean isNegative(int number) {
+        return number < 0;
+    }
+
+    // 8. Метод для печати строки несколько раз
+    public static void printStringMultipleTimes(String str, int count) {
         for (int i = 0; i < count; i++) {
             System.out.println(str);
         }
     }
 
-    // 9. Високосный год
-    static boolean leapYear(int year) {
-        return (year % 400 == 0) || (year % 100 != 0 && year % 4 == 0);
+    // 9. Метод для проверки, является ли год високосным
+    public static boolean isLeapYear(int year) {
+        return year % 100 != 0 && year % 4 == 0 || year % 400 == 0;
     }
 
-    // 10. Инверсия массива
-    static int[] invertArray(int[] arr) {
+    // 10. Метод для инвертирования значений массива
+    public static void invertArrayValues(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = arr[i] == 0 ? 1 : 0;
+            arr[i] = (arr[i] > 0) ? 0 : 1;
+            System.out.print(arr[i] + " ");
         }
-        return arr;
     }
 
-    // 11. Заполнение массива
-    static int[] fillArray(int length) {
-        int[] arr = new int[length];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = i + 1;
+    // 11. Метод для заполнения массива последовательными числами
+    public static void fillArrayWithSequentialNumbers(int size) {
+        int[] fillArr = new int[size];
+        for (int i = 0; i < fillArr.length; i++) {
+            fillArr[i] = i + 1;
+            System.out.print(fillArr[i] + " ");
         }
-        return arr;
     }
 
-    // 12. Умножение элементов
-    static int[] multiplyArrayElements(int[] arr) {
+    // 12. Метод для удвоения значений в массиве, если они меньше 6
+    public static void doubleValuesLessThanSix(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] < 6) {
                 arr[i] *= 2;
             }
-        }
-        return arr;
-    }
-
-    // 13. Диагональная матрица
-    static void diagonalArray(int size) {
-        int[][] matrix = new int[size][size];
-        for (int i = 0; i < size; i++) {
-            matrix[i][i] = 1; // Заполнение главной диагонали
-        }
-        for (int[] row : matrix) {
-            System.out.println(Arrays.toString(row));
+            System.out.print(arr[i] + " ");
         }
     }
 
-    // 14. Создание массива
-    static int[] createArray(int len, int initialValue) {
+    // 13. Метод для печати диагональной матрицы
+    public static void printDiagonalMatrix() {
+        int[][] arr = new int[3][3];
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0, x = arr[i].length - 1; j < arr[i].length; j++, x--) {
+                if (i == j || i == x) arr[i][j] = 1;
+                else arr[i][j] = 0;
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.print("\n");
+        }
+    }
+
+    // 14. Метод для инициализации массива с заданным значением
+    public static void initializeArrayWithValue(int len, int initialValue) {
         int[] arr = new int[len];
-        Arrays.fill(arr, initialValue);
-        return arr;
+        for (int i = 0; i < len; i++) {
+            arr[i] = initialValue;
+            System.out.print("[" + i + "]" + arr[i] + " ");
+        }
     }
 }
