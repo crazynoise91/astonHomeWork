@@ -8,15 +8,15 @@ public class Main {
         printColorBasedOnValue();
         compareTwoNumbers();
 
-        System.out.println(isSumInRange(10, -2));
+        System.out.println(isSumInRange(10, -3));
         System.out.println(isSumInRange(16, 4));
 
-        checkIfPositiveOrNegative(-33);
+        checkIfPositiveOrNegative(-1);
 
         System.out.println(isNegative(7));
         System.out.println(isNegative(-1));
 
-        printStringMultipleTimes("Hello, Aston!", 2);
+        printStringMultipleTimes("Hello, Aston!", 3);
 
         System.out.println(isLeapYear(2024));
 
