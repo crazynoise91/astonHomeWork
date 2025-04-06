@@ -1,2 +1,2 @@
-src/main/java/org/example/Main.java
+Lesson_6
 
