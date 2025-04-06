@@ -19,7 +19,7 @@ public class Park {
         System.out.println("Аттракционы в парке '" + name + "':");
         for (Attraction attraction : attractions) {
             attraction.printAttractionInfo();
-            System.out.println("--------------------");
+            System.out.println("==========================");
 
         }
     }

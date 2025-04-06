@@ -24,10 +24,10 @@ public class Main {
 
         // 3. Создаем класс Park:
         Park bestPark = new Park("Лучший парк");
-        Park.Attraction ferrisWheel = bestPark.new Attraction("Карусель", "12:00 - 18:00", 300);
-        Park.Attraction bungee = bestPark.new Attraction("Зеркальная комната", "12:00 - 18:00", 250);
-        bestPark.addAttraction(ferrisWheel);
-        bestPark.addAttraction(bungee);
+        Park.Attraction Carousel = bestPark.new Attraction("Карусель", "12:00 - 18:00", 300);
+        Park.Attraction mirrorRoom = bestPark.new Attraction("Зеркальная комната", "12:00 - 18:00", 250);
+        bestPark.addAttraction(Carousel);
+        bestPark.addAttraction(mirrorRoom);
         bestPark.printAllAttractions();
 
     }
